@@ -64,8 +64,9 @@
 - [x] **Exp 4: Dimensionality reduction** — PCA at 3/5/8/10/15/20/all components
 - [x] **Exp 5: Feature ablation** — steps-only → +windows → +time → +neighbors
 - [x] **Exp 6: Step-to-BPM time lag** — test if lagged steps (1-10 min) predict BPM better than current steps
+- [x] **Exp 7: RF hyperparameter comparison** — depth 10/15/20, trees 50/100/200, min_samples_split=5
 
-**Charts:** `exp1_data_amount.png`, `exp2_composition.png`, `exp3_augmentation.png`, `exp4_pca.png`, `exp5_ablation.png`, `exp6_time_lag.png`
+**Charts:** `exp1_data_amount.png`, `exp2_composition.png`, `exp3_augmentation.png`, `exp4_pca.png`, `exp5_ablation.png`, `exp6_time_lag.png`, `exp7_rf_hyperparams.png`
 
 ---
 
