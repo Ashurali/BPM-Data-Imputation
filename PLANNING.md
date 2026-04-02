@@ -70,13 +70,19 @@
 
 ---
 
-## Phase 4: SAITS Deep Learning Model (Optional) 🔲
+## Phase 4: SAITS Deep Learning Model ✅
+**Notebook:** `phase4_saits.ipynb`
 
-- 3rd model: self-attention for time series imputation (DMSA mechanism)
+- 3rd model: SAITS — self-attention for time series imputation (DMSA mechanism)
 - Uses the 1 allowed deep learning slot per HW rules
-- Library: PyPOTS (`pip install pypots`)
-- Paper: arxiv 2202.08516, outperforms BRITS by 12-38% MAE
-- Compare against LR and RF on same CV splits
+- Library: PyPOTS (`pypots.imputation.SAITS`)
+- Architecture: 2 transformer layers, d_model=64, 4 heads, d_ffn=128
+- Window-based: 60-min windows, 15-min stride, overlapping average for full imputation
+- Features: 11 (steps + temporal — deliberately NO neighbor BPM, to let attention learn temporal deps)
+- Comparison against LR and RF on same data
+- Saves: `Data/imputed_bpm_all.csv` (with bpm_lr, bpm_rf, bpm_saits)
+
+**Charts:** `phase4_model_comparison.png`, `phase4_imputation_comparison.png`
 
 ---
 
@@ -92,16 +98,26 @@
 
 - Max 10 pages, 12pt+ font, PDF format
 - Sections: Introduction, Dataset, Methods, Experiments, Results, Discussion
-- Discussion topics: bias-variance tradeoff, MAR implications, feature importance, sampling bias finding, comparison of methods
 - Code appendix (separate, not counted in page limit)
 - Dataset + documentation on GitHub
+
+### Discussion Section Topics (from Phase 3-4 analysis)
+1. **Bias-variance tradeoff across model complexity**: LR (high bias) → RF (balanced) → SAITS (high variance on small data)
+2. **Feature engineering vs representation learning**: RF + hand-crafted neighbor-BPM beats SAITS + learned attention — domain knowledge matters on small datasets
+3. **Data efficiency**: traditional ML is more data-efficient when good features exist; DL needs more data
+4. **MAR implications**: missingness depends on activity/time → models using these features benefit
+5. **Sampling bias**: watch oversamples active states → training BPM mean may be inflated; per-regime error analysis (Phase 2)
+6. **RF hyperparameters (Exp 7)**: diminishing returns from deeper trees / more estimators; bias-variance visible in depth comparison
+7. **Time lag finding (Exp 6)**: 1-3 min lag in step→BPM response aligns with cardiovascular physiology
+8. **Practical recommendation**: RF + domain features for limited wearable data; SAITS at scale
+9. **Limitations**: CPU training caps SAITS; 26 days of data; single user; 60-min windows may miss longer patterns
 
 ---
 
 ## HW REQUIREMENTS CHECKLIST
 - [x] Own dataset (not pre-existing) — Huawei Band 7 BPM + steps
 - [x] At least 2 supervised learning methods — Linear Regression + Random Forest
-- [ ] Max 1 deep learning — SAITS (optional, Phase 4)
+- [x] Max 1 deep learning — SAITS (Phase 4)
 - [x] Cross-validation — 5-fold CV
 - [x] MSE/RMSE metrics
 - [x] Experiment: effect of training data amount
