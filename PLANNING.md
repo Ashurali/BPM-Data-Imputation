@@ -86,11 +86,19 @@
 
 ---
 
-## Phase 5: Report Visualizations 🔲
+## Phase 5: Report Visualizations ✅
+**Notebook:** `phase5_report_visuals.ipynb`
 
-- Finalize all charts (consistent styling, report-ready)
-- Additional comparison plots from Phase 3 experiments
-- Before/after imputation full-month overview
+- 6 consolidated, publication-quality figures for the 10-page report
+- Fig 1: Dataset overview (timeline + BPM distribution + daily coverage)
+- Fig 2: Feature analysis (correlation matrix + autocorrelation + circadian)
+- Fig 3: Model comparison (RMSE/R² bars + RF feature importance)
+- Fig 4: Experiment results 2x2 (data amount, ablation, PCA, time lag)
+- Fig 5: Single-day imputation comparison (LR vs RF vs SAITS)
+- Fig 6: Full-month before/after imputation
+- All 200 DPI, serif font, consistent styling
+
+**Charts:** `report_fig1_dataset.png`, `report_fig2_features.png`, `report_fig3_models.png`, `report_fig4_experiments.png`, `report_fig5_imputation_day.png`, `report_fig6_before_after.png`
 
 ---
 
