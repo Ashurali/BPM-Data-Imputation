@@ -102,7 +102,7 @@
 
 ---
 
-## Phase 6: Report Writing 🔲
+## Phase 6: Report Writing ✅
 
 - Max 10 pages, 12pt+ font, PDF format
 - Sections: Introduction, Dataset, Methods, Experiments, Results, Discussion
@@ -135,10 +135,10 @@
 - [x] Experiment: data composition/balance
 - [x] Experiment: data augmentation
 - [x] Experiment: with/without dimensionality reduction
-- [ ] Discussion section
-- [ ] Code appendix
+- [x] Discussion section — 5 subsections covering feature eng vs DL, temporal coherence, bias-variance, MAR, limitations
+- [x] Code appendix — listed in report Appendix section
 - [ ] Dataset on GitHub with documentation
-- [ ] Max 10 pages, 12pt+ font
+- [x] Max 10 pages, 12pt+ font — report.docx generated
 
 ## KEY FINDINGS FOR REPORT
 - Motivation: clinical EWS, HRV analysis (unstable at 10% missing), hypoglycemia prediction

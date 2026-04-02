@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_metadata/
+
+# Node (report generation)
+node_modules/
+package-lock.json
+
+# Model checkpoints (large, reproducible)
+saits_model/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated report (keep PDF, ignore docx build artifacts)
+generate_report.js
+
+# Temp files
+*.tmp
+patch_*.py
+fix_*.py
