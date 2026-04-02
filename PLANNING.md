@@ -110,7 +110,8 @@
 - Dataset + documentation on GitHub
 
 ### Discussion Section Topics (from Phase 3-4 analysis)
-1. **Bias-variance tradeoff across model complexity**: LR (high bias) → RF (balanced) → SAITS (high variance on small data)
+1. **Learning paradigm taxonomy**: LR/RF are supervised (explicit labels); SAITS is self-supervised (masks observed values, learns to reconstruct — like BERT). Acknowledge this distinction. LR+RF satisfy the "2 supervised" HW requirement; SAITS is a bonus 3rd model.
+2. **Bias-variance tradeoff across model complexity**: LR (high bias) → RF (balanced) → SAITS (high variance on small data)
 2. **Feature engineering vs representation learning**: RF + hand-crafted neighbor-BPM beats SAITS + learned attention — domain knowledge matters on small datasets
 3. **Data efficiency**: traditional ML is more data-efficient when good features exist; DL needs more data
 4. **MAR implications**: missingness depends on activity/time → models using these features benefit
@@ -119,7 +120,8 @@
 7. **Time lag finding (Exp 6)**: 1-3 min lag in step→BPM response aligns with cardiovascular physiology
 8. **Pointwise accuracy vs temporal coherence** (KEY FINDING): SAITS has worse R² but produces the most natural BPM curves — self-attention learns the *shape* of heart rate, not just point estimates. RMSE/R² miss this. For clinical use (HRV, anomaly detection), temporal coherence may matter more.
 9. **Practical recommendation**: RF + domain features for limited wearable data; SAITS at scale or when temporal smoothness matters
-10. **Limitations**: CPU training caps SAITS; 26 days of data; single user; 60-min windows may miss longer patterns
+10. **Regularization**: Ridge vs plain LR — test if L2 helps with step feature collinearity. RF already regularized via depth/leaf constraints; SAITS via dropout + early stopping.
+11. **Limitations**: CPU training caps SAITS; 26 days of data; single user; 60-min windows may miss longer patterns
 
 ---
 
