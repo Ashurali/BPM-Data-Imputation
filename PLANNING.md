@@ -109,8 +109,9 @@
 5. **Sampling bias**: watch oversamples active states → training BPM mean may be inflated; per-regime error analysis (Phase 2)
 6. **RF hyperparameters (Exp 7)**: diminishing returns from deeper trees / more estimators; bias-variance visible in depth comparison
 7. **Time lag finding (Exp 6)**: 1-3 min lag in step→BPM response aligns with cardiovascular physiology
-8. **Practical recommendation**: RF + domain features for limited wearable data; SAITS at scale
-9. **Limitations**: CPU training caps SAITS; 26 days of data; single user; 60-min windows may miss longer patterns
+8. **Pointwise accuracy vs temporal coherence** (KEY FINDING): SAITS has worse R² but produces the most natural BPM curves — self-attention learns the *shape* of heart rate, not just point estimates. RMSE/R² miss this. For clinical use (HRV, anomaly detection), temporal coherence may matter more.
+9. **Practical recommendation**: RF + domain features for limited wearable data; SAITS at scale or when temporal smoothness matters
+10. **Limitations**: CPU training caps SAITS; 26 days of data; single user; 60-min windows may miss longer patterns
 
 ---
 
