@@ -45,8 +45,7 @@ We compare three methods spanning the complexity spectrum:
 ├── phase3_experiments.ipynb     # 7 systematic experiments
 ├── phase4_saits.ipynb           # SAITS deep learning model
 ├── phase5_report_visuals.ipynb  # Report-ready figures
-├── report.docx                  # Final report
-├── Data/                        # Raw and processed datasets
+├── report.docx                  # Final report                       # Raw and processed datasets
 ├── Charts/                      # All generated visualizations
 └── PLANNING.md                  # Project planning document
 ```
