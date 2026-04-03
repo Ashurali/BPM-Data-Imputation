@@ -26,6 +26,7 @@ We compare three methods spanning the complexity spectrum:
 - **BPM:** 11,823 records (32% coverage of minute-level timeline)
 - **Steps:** 4,604 interval records
 - **Missingness:** MAR (Missing At Random) — depends on time-of-day and activity level
+- **Github Link:** Dataset can be found in another github link here : https://github.com/Ashurali/BPM-Data
 
 | File | Description |
 |------|-------------|
