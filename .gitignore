@@ -37,3 +37,4 @@ generate_report.js
 *.tmp
 patch_*.py
 fix_*.py
+Data/
